@@ -1,9 +1,9 @@
 pipeline {
   agent any
   environment {
-    FRONTEND_GIT = 'https://github.com/sontung0/tutorial-jenkins-frontend.git'
+    FRONTEND_GIT = 'https://github.com/anhtaidang/tutorial-jenkins-pipeline.git'
     FRONTEND_BRANCH = 'master'
-    FRONTEND_IMAGE = 'sontung0/tutorial-jenkins-frontend'
+    FRONTEND_IMAGE = 'taidang/jenkins_frontend'
     FRONTEND_SERVER = '1.2.3.4'
     FRONTEND_SERVER_DIR = './app'
   }
@@ -11,15 +11,15 @@ pipeline {
     stage('Build JS') {
       agent {
         docker {
-          image 'node:latest'
-          args '-v tutorial_jenkins_frontend_modules:$WORKSPACE/node_modules'
+          image 'node:8'
+          args '-v jenkins_frontend_modules:$WORKSPACE/node_modules'
         }
       }
       steps {
         git(url: FRONTEND_GIT, branch: FRONTEND_BRANCH)
         sh 'npm i'
-        sh 'npm run build'
-        stash(name: 'frontend', includes: 'build/*/**')
+        sh 'npm run build-vi:dev'
+        stash(name: 'frontend', includes: 'folizon/dist/*/**')
       }
     }
     stage('Build Image') {
