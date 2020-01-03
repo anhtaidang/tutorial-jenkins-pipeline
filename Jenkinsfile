@@ -3,7 +3,7 @@ pipeline {
   environment {
     FRONTEND_GIT = 'https://github.com/anhtaidang/tutorial-jenkins-frontend.git'
     FRONTEND_BRANCH = 'master'
-    FRONTEND_IMAGE = 'taidang/jenkins_frontend'
+    FRONTEND_IMAGE = 'taidang1994/jenkins_frontend'
     FRONTEND_SERVER = '1.2.3.4'
     FRONTEND_SERVER_DIR = './app'
   }
