@@ -4,7 +4,7 @@ pipeline {
     FRONTEND_GIT = 'https://github.com/anhtaidang/tutorial-jenkins-frontend.git'
     FRONTEND_BRANCH = 'master'
     FRONTEND_IMAGE = 'taidang1994/jenkins_frontend'
-    FRONTEND_SERVER = '127.0.0.1'
+    FRONTEND_SERVER = '192.168.65.129'
     FRONTEND_SERVER_DIR = './app'
   }
   stages {
