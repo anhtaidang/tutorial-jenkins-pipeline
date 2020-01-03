@@ -17,7 +17,7 @@ pipeline {
       }
       steps {
         git(url: FRONTEND_GIT, branch: FRONTEND_BRANCH)
-        sh 'npm i'
+        sh 'npm install'
         sh 'npm run build'
         stash(name: 'frontend', includes: 'build/*/**')
       }
