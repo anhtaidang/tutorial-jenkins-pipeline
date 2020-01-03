@@ -40,7 +40,7 @@ pipeline {
             credentialsId: 'ssh',
             keyFileVariable: 'identityFile',
             passphraseVariable: '',
-            usernameVariable: 'root'
+            usernameVariable: 'user'
           )]) {
             def remote = [:]
             remote.name = 'server'
