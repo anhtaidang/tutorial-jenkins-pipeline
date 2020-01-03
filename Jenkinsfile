@@ -11,7 +11,7 @@ pipeline {
     stage('Build JS') {
       agent {
         docker {
-          image 'node:8-alpine'
+          image 'node:latest'
           args '-v jenkins_frontend_modules:$WORKSPACE/node_modules'
         }
       }
